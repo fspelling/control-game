@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="ControlGame.Domain.Entities.Jogador">
+    <Position X="4.5" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAEACAAAAAAAAAAAAAAACAAAAAAAAAgAAACAAA=</HashCode>
+      <FileName>Entity\Jogador.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControlGame.Domain.Entities.Jogo">
+    <Position X="6.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACBAAAAAABgAAAAAAAAAIAAAAAQAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entity\Jogo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControlGame.Domain.Entities.JogoPlataforma">
+    <Position X="8" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACABAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAAAAgA=</HashCode>
+      <FileName>Entity\JogoPlataforma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControlGame.Domain.Entities.MeuJogo">
+    <Position X="4.5" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAEAAAABAAAAEAAAAAABAAAAAAAAAIAA=</HashCode>
+      <FileName>Entity\MeuJogo.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="ControlGame.Domain.Entities.Plataforma">
+    <Position X="6.25" Y="4" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEAAAA=</HashCode>
+      <FileName>Entity\Plataforma.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
