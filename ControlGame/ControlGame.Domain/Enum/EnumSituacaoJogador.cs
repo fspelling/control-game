@@ -8,7 +8,7 @@ namespace ControlGame.Domain.Enum
 {
     public enum EnumSituacaoJogador
     {
-        EmAndanmento = 0,
+        EmAnalise = 0,
         Ativo = 1,
         Bloqueado = 2
     }

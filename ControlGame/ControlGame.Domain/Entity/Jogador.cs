@@ -1,21 +1,51 @@
 ﻿using ControlGame.Domain.Enum;
+using ControlGame.Domain.Resources;
 using ControlGame.Domain.ValueObjects;
+using prmToolkit.NotificationPattern;
 using System;
+using ControlGame.Domain.Extensions;
 
 namespace ControlGame.Domain.Entities
 {
-    public class Jogador
+    public class Jogador : Notifiable
     {
-        public Guid Id { get; set; }
+        public Guid Id { get; private set; }
 
-        public Nome Nome { get; set; }
+        public Nome Nome { get; private set; }
 
-        public Email Email { get; set; }
+        public Email Email { get; private set; }
 
         public string Senha { get; private set; }
 
-        public EnumSituacaoJogador Status { get; set; }
+        public EnumSituacaoJogador Status { get; private set; }
 
+        public Jogador(Email email, string senha)
+        {
+            Id = Guid.NewGuid();
+            Email = email;
+            Senha = senha;
+            Status = EnumSituacaoJogador.EmAnalise;
 
+            NotificarSenha();
+        }
+
+        public Jogador(Email email, string senha, Nome nome)
+        {
+            Id = Guid.NewGuid();
+            Email = email;
+            Nome = nome;
+            Senha = senha;
+            Status = EnumSituacaoJogador.EmAnalise;
+
+            NotificarSenha();
+        }
+
+        private void NotificarSenha()
+        {
+            (new AddNotifications<Jogador>(this)).IfNullOrInvalidLength(p => p.Senha, 6, 32, string.Format(Message.X_6_QUANTIDADE, "senha"));
+
+            if(IsValid())
+                Senha = Senha.ConvertToMD5();
+        }
     }
 }

@@ -12,6 +12,8 @@ namespace ControlGame.Domain.Arguments.Jogador
     {
         public string Nome { get; set; }
 
-        public Email Email { get; set; }
+        public string Email { get; set; }
+
+        public int Status { get; set; }
     }
 }
