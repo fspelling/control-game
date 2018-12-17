@@ -1,11 +1,12 @@
-﻿using ControlGame.Domain.Arguments.Jogador;
+﻿using System.Collections.Generic;
+using System.Linq;
+using ControlGame.Domain.Arguments.Jogador;
 using ControlGame.Domain.Entities;
 using ControlGame.Domain.Interfaces.Repositories;
 using ControlGame.Domain.Interfaces.Services;
 using ControlGame.Domain.Resources;
 using ControlGame.Domain.ValueObjects;
 using prmToolkit.NotificationPattern;
-using System;
 
 namespace ControlGame.Domain.Services
 {
@@ -20,6 +21,9 @@ namespace ControlGame.Domain.Services
 
         public AdicionarJogadorResponse Adicionar(AdicionarJogadorRequest request)
         {
+            if (request == null)
+                AddNotification("AdicionarJogador", string.Format(Message.X_0_OBRIGATORIO, "request"));
+
             Email email = new Email(request.Email);
             Nome nome = new Nome(request.PrimeiroNome, request.UltimoNome);
 
@@ -32,7 +36,32 @@ namespace ControlGame.Domain.Services
 
             Jogador jogadorAdd = _repository.Adicionar(jogador);
 
-            return new AdicionarJogadorResponse() { Id = jogadorAdd.Id, Mensagem = "Criacao realizada com sucesso" };
+            return (AdicionarJogadorResponse)jogadorAdd;
+        }
+
+        public AlterarJogadorResponse Alterar(AlterarJogadorRequest request)
+        {
+            if (request == null)
+                AddNotification("AlterarJogador", string.Format(Message.X_0_OBRIGATORIO, "request"));
+
+            Jogador jogadorBuscado = _repository.ObterPorId(request.Id);
+
+            if (jogadorBuscado == null)
+                AddNotification("Id", Message.X_DADOS_NAO_ENCONTRADOS);
+
+            Email email = new Email(request.Email);
+            Nome nome = new Nome(request.PrimeiroNome, request.UltimoNome);
+
+            jogadorBuscado.Alterar(nome, email);
+
+            AddNotifications(jogadorBuscado);
+
+            if (jogadorBuscado.IsInvalid())
+                return null;
+
+            _repository.Alterar(jogadorBuscado);
+
+            return (AlterarJogadorResponse)jogadorBuscado;
         }
 
         public AutenticarJogadorResponse Autenticar(AutenticarJogadorRequest request)
@@ -50,7 +79,12 @@ namespace ControlGame.Domain.Services
 
             Jogador jogadorAuth = _repository.Autenticar(jogador.Email.Endereco, jogador.Senha);
 
-            return new AutenticarJogadorResponse() { Email = jogadorAuth.Email.Endereco, Nome = jogadorAuth.Nome.PrimeiroNome, Status = (int)jogadorAuth.Status };
+            return (AutenticarJogadorResponse)jogadorAuth;
+        }
+
+        public IEnumerable<JogadorResponse> Listar()
+        {
+            return _repository.Listar().Select(jogador => (JogadorResponse)jogador).ToList();
         }
     }
 }

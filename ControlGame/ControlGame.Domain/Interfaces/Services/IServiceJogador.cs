@@ -13,5 +13,9 @@ namespace ControlGame.Domain.Interfaces.Services
         AutenticarJogadorResponse Autenticar(AutenticarJogadorRequest request);
 
         AdicionarJogadorResponse Adicionar(AdicionarJogadorRequest request);
+
+        AlterarJogadorResponse Alterar(AlterarJogadorRequest request);
+
+        IEnumerable<JogadorResponse> Listar();
     }
 }

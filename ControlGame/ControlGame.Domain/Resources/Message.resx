@@ -126,7 +126,19 @@
   <data name="X_6_QUANTIDADE" xml:space="preserve">
     <value>Informe {0} no minimo com 6 caracteres</value>
   </data>
+  <data name="X_ALTERAR_INATIVO" xml:space="preserve">
+    <value>Não é possivel alterar {0} que não esta ativo</value>
+  </data>
+  <data name="X_DADOS_ATUALIZADOS" xml:space="preserve">
+    <value>{0} atualizado com sucesso</value>
+  </data>
+  <data name="X_DADOS_NAO_ENCONTRADOS" xml:space="preserve">
+    <value>Dados não encontrados</value>
+  </data>
   <data name="X_OBRIGATORIO_QUANTIDADE_RANGE" xml:space="preserve">
     <value>{0} é obrigatorio e deve conter de {1} a {2} caracteres</value>
+  </data>
+  <data name="X_OPERACAO_REALIZADA_SUCESSO" xml:space="preserve">
+    <value>Criacao realizada com sucesso</value>
   </data>
 </root>

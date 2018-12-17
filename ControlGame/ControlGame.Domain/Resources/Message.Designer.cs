@@ -88,11 +88,47 @@ namespace ControlGame.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Não é possivel alterar {0} que não esta ativo.
+        /// </summary>
+        public static string X_ALTERAR_INATIVO {
+            get {
+                return ResourceManager.GetString("X_ALTERAR_INATIVO", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to {0} atualizado com sucesso.
+        /// </summary>
+        public static string X_DADOS_ATUALIZADOS {
+            get {
+                return ResourceManager.GetString("X_DADOS_ATUALIZADOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Dados não encontrados.
+        /// </summary>
+        public static string X_DADOS_NAO_ENCONTRADOS {
+            get {
+                return ResourceManager.GetString("X_DADOS_NAO_ENCONTRADOS", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to {0} é obrigatorio e deve conter de {1} a {2} caracteres.
         /// </summary>
         public static string X_OBRIGATORIO_QUANTIDADE_RANGE {
             get {
                 return ResourceManager.GetString("X_OBRIGATORIO_QUANTIDADE_RANGE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Criacao realizada com sucesso.
+        /// </summary>
+        public static string X_OPERACAO_REALIZADA_SUCESSO {
+            get {
+                return ResourceManager.GetString("X_OPERACAO_REALIZADA_SUCESSO", resourceCulture);
             }
         }
     }

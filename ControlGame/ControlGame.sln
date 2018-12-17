@@ -5,6 +5,8 @@ VisualStudioVersion = 15.0.28307.168
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlGame.Domain", "ControlGame.Domain\ControlGame.Domain.csproj", "{33B8E9B4-2360-4F63-A055-E0815C0F568B}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ControlGame.Infra", "ControlGame.Infra\ControlGame.Infra.csproj", "{BDF01315-0F28-4BD5-AD07-E9A17CA37CA9}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{33B8E9B4-2360-4F63-A055-E0815C0F568B}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{33B8E9B4-2360-4F63-A055-E0815C0F568B}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{33B8E9B4-2360-4F63-A055-E0815C0F568B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BDF01315-0F28-4BD5-AD07-E9A17CA37CA9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BDF01315-0F28-4BD5-AD07-E9A17CA37CA9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BDF01315-0F28-4BD5-AD07-E9A17CA37CA9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BDF01315-0F28-4BD5-AD07-E9A17CA37CA9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
