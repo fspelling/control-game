@@ -1,19 +1,10 @@
 ﻿using ControlGame.Domain.Entities;
+using ControlGame.Domain.Interfaces.Repositories.Base;
 using System;
-using System.Collections.Generic;
 
 namespace ControlGame.Domain.Interfaces.Repositories
 {
-    public interface IRepositoryJogador
+    public interface IRepositoryJogador : IRepositoryBase<Jogador, Guid>
     {
-        Jogador Autenticar(string email, string senha);
-
-        Jogador Adicionar(Jogador request);
-
-        IEnumerable<Jogador> Listar();
-
-        void Alterar(Jogador request);
-
-        Jogador ObterPorId(Guid id);
     }
 }

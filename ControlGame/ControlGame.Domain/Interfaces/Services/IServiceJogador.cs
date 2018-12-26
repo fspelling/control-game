@@ -1,14 +1,12 @@
-﻿using ControlGame.Domain.Arguments.Jogador;
-using ControlGame.Domain.ValueObjects;
+﻿using ControlGame.Domain.Arguments.Base;
+using ControlGame.Domain.Arguments.Jogador;
+using ControlGame.Domain.Interfaces.Services.Base;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ControlGame.Domain.Interfaces.Services
 {
-    public interface IServiceJogador
+    public interface IServiceJogador : IServiceBase
     {
         AutenticarJogadorResponse Autenticar(AutenticarJogadorRequest request);
 
@@ -17,5 +15,7 @@ namespace ControlGame.Domain.Interfaces.Services
         AlterarJogadorResponse Alterar(AlterarJogadorRequest request);
 
         IEnumerable<JogadorResponse> Listar();
+
+        ResponseBase Excluir(Guid id);
     }
 }

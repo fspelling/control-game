@@ -4,10 +4,11 @@ using ControlGame.Domain.ValueObjects;
 using prmToolkit.NotificationPattern;
 using System;
 using ControlGame.Domain.Extensions;
+using ControlGame.Domain.Entity.Base;
 
 namespace ControlGame.Domain.Entities
 {
-    public class Jogador : Notifiable
+    public class Jogador : EntityBase
     {
         public Guid Id { get; private set; }
 
@@ -21,7 +22,6 @@ namespace ControlGame.Domain.Entities
 
         public Jogador(Email email, string senha)
         {
-            Id = Guid.NewGuid();
             Email = email;
             Senha = senha;
             Status = EnumSituacaoJogador.EmAnalise;

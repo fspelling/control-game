@@ -1,5 +1,7 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
+using ControlGame.Domain.Arguments.Base;
 using ControlGame.Domain.Arguments.Jogador;
 using ControlGame.Domain.Entities;
 using ControlGame.Domain.Interfaces.Repositories;
@@ -29,7 +31,7 @@ namespace ControlGame.Domain.Services
 
             Jogador jogador = new Jogador(email, request.Senha, nome);
 
-            AddNotifications(jogador);
+            AddNotifications(nome, email);
 
             if (jogador.IsInvalid())
                 return null;
@@ -77,9 +79,24 @@ namespace ControlGame.Domain.Services
             if (jogador.IsInvalid())
                 return null;
 
-            Jogador jogadorAuth = _repository.Autenticar(jogador.Email.Endereco, jogador.Senha);
+            Jogador jogadorAuth = _repository.ObterPor(p => p.Email.Endereco == jogador.Email.Endereco, p => p.Senha == jogador.Senha);
 
             return (AutenticarJogadorResponse)jogadorAuth;
+        }
+
+        public ResponseBase Excluir(Guid id)
+        {
+            Jogador jogador = _repository.ObterPorId(id);
+
+            if (jogador == null)
+            {
+                AddNotification("Id", Message.X_DADOS_NAO_ENCONTRADOS);
+                return null;
+            }
+
+            _repository.Remover(jogador);
+
+            return new ResponseBase();
         }
 
         public IEnumerable<JogadorResponse> Listar()

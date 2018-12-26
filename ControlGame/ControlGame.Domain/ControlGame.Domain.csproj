@@ -104,8 +104,10 @@
     <Compile Include="Arguments\Jogador\AutenticarJogadorRequest.cs" />
     <Compile Include="Arguments\Jogador\AutenticarJogadorResponse.cs" />
     <Compile Include="Arguments\Jogador\JogadorResponse.cs" />
+    <Compile Include="Arguments\Base\ResponseBase.cs" />
     <Compile Include="Arguments\Plataforma\AdicionarPlataformaRequest.cs" />
     <Compile Include="Arguments\Plataforma\AdicionarPlataformaResponse.cs" />
+    <Compile Include="Entity\Base\EntityBase.cs" />
     <Compile Include="Entity\Jogador.cs" />
     <Compile Include="Entity\Jogo.cs" />
     <Compile Include="Entity\JogoPlataforma.cs" />
@@ -115,7 +117,9 @@
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Interfaces\Arguments\IRequest.cs" />
     <Compile Include="Interfaces\Arguments\IResponse.cs" />
+    <Compile Include="Interfaces\Repositories\Base\IRepositoryBase.cs" />
     <Compile Include="Interfaces\Repositories\IRepositoryJogador.cs" />
+    <Compile Include="Interfaces\Services\Base\IServiceBase.cs" />
     <Compile Include="Interfaces\Services\IServiceJogador.cs" />
     <Compile Include="Interfaces\Services\IServicePlataforma.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
