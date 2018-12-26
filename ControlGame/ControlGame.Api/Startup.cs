@@ -18,7 +18,7 @@ namespace ControlGame.Api
             HttpConfiguration config = new HttpConfiguration();
 
             //Swager
-            //
+            SwaggerConfig.Register(config);
 
             //Configure injecao de depedencia
             var container = new UnityContainer();

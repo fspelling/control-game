@@ -7,6 +7,8 @@ namespace ControlGame.Domain.ValueObjects
     {
         public string Endereco { get; private set; }
 
+        protected Email() { }
+
         public Email(string endereco)
         {
             Endereco = endereco;

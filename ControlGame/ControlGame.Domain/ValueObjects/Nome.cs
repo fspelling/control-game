@@ -14,6 +14,8 @@ namespace ControlGame.Domain.ValueObjects
 
         public string UltimoNome { get; private set; }
 
+        protected Nome() { }
+
         public Nome(string primeiroNome, string ultimoNome)
         {
             PrimeiroNome = primeiroNome;

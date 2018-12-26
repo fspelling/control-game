@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Web.Http.Dependencies;
 using Unity;
+using Unity.Exceptions;
 
 namespace ControlGame.IOC.Unity
 {
@@ -32,11 +33,11 @@ namespace ControlGame.IOC.Unity
         {
             try
             {
-                return container.ResolveAll(serviceType);
+                return container.Resolve(serviceType);
             }
-            catch (Exception e)
+            catch (ResolutionFailedException ex)
             {
-                return new List<object>();
+                return null;
             }
         }
 
@@ -46,7 +47,7 @@ namespace ControlGame.IOC.Unity
             {
                 return container.ResolveAll(serviceType);
             }
-            catch (Exception e)
+            catch (ResolutionFailedException)
             {
                 return new List<object>();
             }
