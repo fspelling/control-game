@@ -10,6 +10,8 @@ namespace ControlGame.Infra.Persistence
 
         public IDbSet<Plataforma> Plataformas { get; set; }
 
+        public IDbSet<Jogo> Jogos { get; set; }
+
         public ControlGameContext() : base("ControlGameConnectionString")
         {
             Configuration.ProxyCreationEnabled = false;

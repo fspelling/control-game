@@ -124,6 +124,15 @@ namespace ControlGame.Domain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to {0} ja existe.
+        /// </summary>
+        public static string X_OPERACAO_DUPLICIDADE {
+            get {
+                return ResourceManager.GetString("X_OPERACAO_DUPLICIDADE", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Criacao realizada com sucesso.
         /// </summary>
         public static string X_OPERACAO_REALIZADA_SUCESSO {

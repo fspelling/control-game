@@ -124,12 +124,6 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ControlGame.Domain\ControlGame.Domain.csproj">
-      <Project>{33b8e9b4-2360-4f63-a055-e0815c0f568b}</Project>
-      <Name>ControlGame.Domain</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
     <EmbeddedResource Include="Migrations\201812171912348_criando_bd.resx">
       <DependentUpon>201812171912348_criando_bd.cs</DependentUpon>
     </EmbeddedResource>

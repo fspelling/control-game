@@ -16,6 +16,8 @@ namespace ControlGame.Domain.Services
     {
         private readonly IRepositoryJogador _repository;
 
+        protected ServiceJogador() { }
+
         public ServiceJogador(IRepositoryJogador repository)
         {
             _repository = repository;
@@ -32,6 +34,9 @@ namespace ControlGame.Domain.Services
             Jogador jogador = new Jogador(email, request.Senha, nome);
 
             AddNotifications(nome, email);
+
+            if (_repository.Existe(p => p.Email.Endereco == email.Endereco))
+                AddNotification("Email", string.Format(Message.X_OPERACAO_DUPLICIDADE, "email"));
 
             if (jogador.IsInvalid())
                 return null;

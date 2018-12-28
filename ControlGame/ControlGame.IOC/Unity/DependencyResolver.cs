@@ -23,10 +23,12 @@ namespace ControlGame.IOC.Unity
             //Domain
             container.RegisterType<IUnitOfWork, UnitOfWork>(new HierarchicalLifetimeManager());
             container.RegisterType<IServiceJogador, ServiceJogador>(new HierarchicalLifetimeManager());
+            container.RegisterType<IServiceJogo, ServiceJogo>(new HierarchicalLifetimeManager());
 
             //Repository
             container.RegisterType(typeof(IRepositoryBase<,>), typeof(RepositoryBase<,>));
             container.RegisterType<IRepositoryJogador, RepositoryJogador>(new HierarchicalLifetimeManager());
+            container.RegisterType<IRepositoryJogo, RepositoryJogo>(new HierarchicalLifetimeManager());
         }
     }
 }

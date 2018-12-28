@@ -19,7 +19,7 @@ namespace ControlGame.Api.Controllers
             _service = service;
         }
 
-        [Route("Adicionat")]
+        [Route("Adicionar")]
         [HttpPost]
         public async Task<HttpResponseMessage> Adicionar(AdicionarJogadorRequest request)
         {

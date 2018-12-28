@@ -1,4 +1,5 @@
-﻿using ControlGame.Domain.Resources;
+﻿using ControlGame.Domain.Entities;
+using ControlGame.Domain.Resources;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,11 @@ namespace ControlGame.Domain.Arguments.Base
         public ResponseBase()
         {
             Mensagem = Message.X_OPERACAO_REALIZADA_SUCESSO;
+        }
+
+        public static explicit operator ResponseBase(Entities.Jogo jogo)
+        {
+            return new ResponseBase();
         }
     }
 }

@@ -138,6 +138,9 @@
   <data name="X_OBRIGATORIO_QUANTIDADE_RANGE" xml:space="preserve">
     <value>{0} é obrigatorio e deve conter de {1} a {2} caracteres</value>
   </data>
+  <data name="X_OPERACAO_DUPLICIDADE" xml:space="preserve">
+    <value>{0} ja existe</value>
+  </data>
   <data name="X_OPERACAO_REALIZADA_SUCESSO" xml:space="preserve">
     <value>Criacao realizada com sucesso</value>
   </data>
